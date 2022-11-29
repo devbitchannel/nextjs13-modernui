@@ -6,29 +6,28 @@ import { asideData, cardData } from "../data/homePageData";
 export default function Page() {
   return (
     <section className="grid grid-cols-12 gap-8 desktop:w-full">
-      <div className="col-span-12 flex flex-col gap-8 desktop:col-span-8">
+      <div className=" col-span-12 w-full desktop:col-span-8 desktop:row-start-1 desktop:row-end-1">
         <img
-          className=" h-72 object-cover desktop:h-auto"
+          className="h-72 object-cover desktop:h-auto"
           src="images/image-web-3-desktop.jpg"
           alt="web-3-desktop"
         />
-        <div className="flex flex-col desktop:flex-row desktop:gap-14">
-          <h2 className="mb-4 max-w-xs text-5xl font-extrabold desktop:mb-0 desktop:text-6xl">
-            The Bright Future of Web 3.0?
-          </h2>
-          <div className="flex max-w-xs flex-col items-start justify-between gap-8 desktop:gap-0">
-            <p className="text-paragraph text-dark-grayish-blue ">
-              We dive into the next evolution of the web that claims to put the
-              power of the platforms back into the hands of the people. But is
-              it really fulfilling its promise?
-            </p>
-            <button className="max-w-fit bg-soft-red py-3 px-6 text-sm font-normal tracking-[0.3em] text-white transition-colors hover:bg-very-dark-blue">
-              READ MORE
-            </button>
-          </div>
-        </div>
       </div>
-      <aside className="col-span-12 w-full bg-very-dark-blue p-8  desktop:col-span-4">
+      <h2 className="col-span-12  max-w-xs text-5xl font-extrabold desktop:col-span-4 desktop:row-start-2 desktop:row-end-2 desktop:mb-0 desktop:flex-row desktop:gap-14 desktop:text-6xl">
+        The Bright Future of Web 3.0?
+      </h2>
+      <div className="col-span-12 flex max-w-xs flex-col items-start justify-between gap-8 desktop:col-span-4 desktop:row-start-2 desktop:row-end-2 desktop:gap-0">
+        <p className="text-paragraph text-dark-grayish-blue ">
+          We dive into the next evolution of the web that claims to put the
+          power of the platforms back into the hands of the people. But is it
+          really fulfilling its promise?
+        </p>
+        <button className="max-w-fit bg-soft-red py-3 px-6 text-sm font-normal tracking-[0.3em] text-white transition-colors hover:bg-very-dark-blue">
+          READ MORE
+        </button>
+      </div>
+
+      <aside className=" col-span-12 w-full bg-very-dark-blue p-8 desktop:col-span-4 desktop:row-start-1 desktop:row-end-3">
         <h3 className="text-4xl font-bold text-soft-orange">New</h3>
         {asideData.map((data) => (
           <div className="border-b-[1px] border-b-grayish-blue py-8 last-of-type:border-b-0 last-of-type:py-0 last-of-type:pt-8">
@@ -44,7 +43,7 @@ export default function Page() {
           </div>
         ))}
       </aside>
-      <div className="col-span-12 mt-8 mb-8 flex flex-col gap-10 desktop:mt-8 desktop:mb-0 desktop:flex-row desktop:justify-between desktop:gap-8">
+      <div className="col-span-12 mt-8 mb-8 flex flex-col gap-10 desktop:mb-0 desktop:flex-row desktop:justify-between desktop:gap-8">
         {cardData.map((card, index) => (
           <div key={card.id} className="flex w-full gap-6">
             <div className="relative flex-[0.5]">
