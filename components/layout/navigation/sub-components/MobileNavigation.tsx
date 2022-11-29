@@ -14,12 +14,19 @@ const MobileNavigation = () => {
       >
         <MenuOpen />
       </button>
+      <div
+        onClick={() => setIsOpen(false)}
+        className={`
+        ${isOpen ? "block" : "hidden"}
+        fixed top-0 left-0
+        right-0 z-10 h-screen w-full bg-black opacity-20 transition-all
+        `}
+      />
+
       <ul
         className={`fixed ${
           isOpen ? "right-0" : "-right-full"
-        } top-0 z-50 flex h-screen w-[65%] flex-col bg-off-white px-6 py-8 transition-all before:absolute before:top-0 ${
-          isOpen ? "before:-left-full" : "before:hidden before:opacity-0"
-        }  before:z-10 before:h-screen before:w-full before:bg-black before:opacity-20`}
+        } top-0 z-50 flex h-screen w-[65%] flex-col bg-off-white px-6 py-8 transition-all`}
       >
         <button
           onClick={() => setIsOpen(false)}

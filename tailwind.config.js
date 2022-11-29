@@ -26,6 +26,10 @@ module.exports = {
       screens: {
         desktop: "1440px",
       },
+      backgroundImage: {
+        "desktop-pattern": "url('/images/image-web-3-desktop.jpg')",
+        "mobile-pattern": "url('/images/image-web-3-mobile.jpg')",
+      },
     },
   },
   plugins: [
