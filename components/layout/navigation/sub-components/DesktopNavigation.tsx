@@ -10,7 +10,7 @@ const DesktopNavigation = () => {
           <Link
             href={link.href}
             key={link.id}
-            className="text-paragraph font-normal text-dark-grayish-blue"
+            className="text-paragraph font-normal text-dark-grayish-blue transition-colors hover:text-soft-red"
           >
             {link.title}
           </Link>

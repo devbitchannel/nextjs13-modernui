@@ -16,7 +16,7 @@ export default function Page() {
               power of the platforms back into the hands of the people. But is
               it really fulfilling its promise?
             </p>
-            <button className="max-w-fit bg-soft-red py-3 px-6 text-sm font-normal tracking-[0.3em] text-white">
+            <button className="max-w-fit bg-soft-red py-3 px-6 text-sm font-normal tracking-[0.3em] text-white transition-colors hover:bg-very-dark-blue">
               READ MORE
             </button>
           </div>
@@ -26,7 +26,10 @@ export default function Page() {
         <h3 className="text-4xl font-bold text-soft-orange">New</h3>
         {asideData.map((data) => (
           <div className="border-b-[1px] border-b-grayish-blue py-8 last-of-type:border-b-0 last-of-type:py-0 last-of-type:pt-8">
-            <Link href="/" className=" text-xl font-bold text-white">
+            <Link
+              href="/"
+              className=" text-xl font-bold text-white transition-colors hover:text-soft-orange"
+            >
               {data.title}
             </Link>
             <p className="mt-2 text-paragraph text-grayish-blue">
@@ -36,7 +39,7 @@ export default function Page() {
         ))}
       </aside>
       <div className="col-span-12 mt-8 flex gap-16">
-        {cardData.map((card) => (
+        {cardData.map((card, index) => (
           <div key={card.id} className="flex gap-6">
             <div className="relative">
               <img
@@ -45,9 +48,11 @@ export default function Page() {
                 alt="image-retro-pcs"
               />
             </div>
-            <div className="flex flex-col">
-              <h4 className="mb-3 text-4xl font-bold text-grayish-blue">01</h4>
-              <p className="text-paragraph font-extrabold text-very-dark-blue">
+            <div className="flex flex-col gap-1">
+              <h4 className="text-4xl font-bold text-grayish-blue ">
+                0{index + 1}
+              </h4>
+              <p className="cursor-pointer text-lg font-extrabold text-very-dark-blue transition-colors hover:text-soft-red">
                 {card.title}
               </p>
               <p className="text-sm text-dark-grayish-blue">
