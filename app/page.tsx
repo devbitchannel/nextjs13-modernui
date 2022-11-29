@@ -1,57 +1,62 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Link from "next/link";
+import { asideData, cardData } from "../data/homePageData";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js 13!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://beta.nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js 13</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Explore the Next.js 13 playground.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates/next.js/app-directory?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>Deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
+    <section className="grid grid-cols-12 gap-8 desktop:w-full">
+      <div className="col-span-12 flex flex-col gap-8 desktop:col-span-8">
+        <img src="images/image-web-3-desktop.jpg" alt="web-3-desktop" />
+        <div className="flex justify-between">
+          <h2 className="max-w-xs text-6xl font-extrabold">
+            The Bright Future of Web 3.0?
+          </h2>
+          <div className="flex max-w-sm flex-col items-start justify-between pl-10">
+            <p className="text-paragraph text-dark-grayish-blue ">
+              We dive into the next evolution of the web that claims to put the
+              power of the platforms back into the hands of the people. But is
+              it really fulfilling its promise?
+            </p>
+            <button className="max-w-fit bg-soft-red py-3 px-6 text-sm font-normal tracking-[0.3em] text-white">
+              READ MORE
+            </button>
+          </div>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
-  )
+      </div>
+      <aside className="col-span-120 w-full bg-very-dark-blue p-8  desktop:col-span-4">
+        <h3 className="text-4xl font-bold text-soft-orange">New</h3>
+        {asideData.map((data) => (
+          <div className="border-b-[1px] border-b-grayish-blue py-8 last-of-type:border-b-0 last-of-type:py-0 last-of-type:pt-8">
+            <Link href="/" className=" text-xl font-bold text-white">
+              {data.title}
+            </Link>
+            <p className="mt-2 text-paragraph text-grayish-blue">
+              {data.description}
+            </p>
+          </div>
+        ))}
+      </aside>
+      <div className="col-span-12 mt-8 flex gap-16">
+        {cardData.map((card) => (
+          <div key={card.id} className="flex gap-6">
+            <div className="relative">
+              <img
+                className="max-h-full"
+                src={card.imageSrc}
+                alt="image-retro-pcs"
+              />
+            </div>
+            <div className="flex flex-col">
+              <h4 className="mb-3 text-4xl font-bold text-grayish-blue">01</h4>
+              <p className="text-paragraph font-extrabold text-very-dark-blue">
+                {card.title}
+              </p>
+              <p className="text-sm text-dark-grayish-blue">
+                {card.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
