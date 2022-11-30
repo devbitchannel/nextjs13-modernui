@@ -20,15 +20,8 @@ module.exports = {
       fontSize: {
         paragraph: "0.9375rem",
       },
-      fontFamily: {
-        inter: ["var(--font-inter)"],
-      },
       screens: {
         desktop: "1440px",
-      },
-      backgroundImage: {
-        "desktop-pattern": "url('/images/image-web-3-desktop.jpg')",
-        "mobile-pattern": "url('/images/image-web-3-mobile.jpg')",
       },
     },
   },

@@ -19,11 +19,11 @@ const MobileNavigation = () => {
         className={`
         ${isOpen ? "block" : "hidden"}
         fixed top-0 left-0
-        right-0 z-10 h-screen w-full bg-black opacity-20 transition-all
+        right-0 z-10 h-screen w-full bg-black opacity-20
         `}
       />
 
-      <ul
+      <div
         className={`fixed ${
           isOpen ? "right-0" : "-right-full"
         } top-0 z-50 flex h-screen w-[65%] flex-col bg-off-white px-6 py-8 transition-all`}
@@ -34,19 +34,21 @@ const MobileNavigation = () => {
         >
           <MenuClose />
         </button>
-        <li className="mt-24 flex flex-col gap-6">
+        <ul className="mt-24 flex flex-col gap-6">
           {navbarLinks.map((link) => (
-            <Link
-              href={link.href}
-              key={link.id}
-              onClick={() => setIsOpen(false)}
-              className="text-lg text-very-dark-blue"
-            >
-              {link.title}
-            </Link>
+            <li className="">
+              <Link
+                href={link.href}
+                key={link.id}
+                onClick={() => setIsOpen(false)}
+                className="text-lg text-very-dark-blue"
+              >
+                {link.title}
+              </Link>
+            </li>
           ))}
-        </li>
-      </ul>
+        </ul>
+      </div>
     </>
   );
 };

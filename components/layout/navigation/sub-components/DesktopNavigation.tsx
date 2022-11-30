@@ -4,9 +4,9 @@ import { navbarLinks } from "../data/navbarLinks";
 
 const DesktopNavigation = () => {
   return (
-    <ul className="hidden md:flex">
-      <li className="flex gap-8 font-normal  ">
-        {navbarLinks.map((link) => (
+    <ul className="hidden gap-8 font-normal md:flex">
+      {navbarLinks.map((link) => (
+        <li>
           <Link
             href={link.href}
             key={link.id}
@@ -14,8 +14,8 @@ const DesktopNavigation = () => {
           >
             {link.title}
           </Link>
-        ))}
-      </li>
+        </li>
+      ))}
     </ul>
   );
 };

@@ -8,7 +8,7 @@ const Navigation = () => {
     <>
       <header>
         <nav className="z-20 flex items-center justify-between py-8 desktop:py-14">
-          <Link href="/" className="navbar-brand">
+          <Link href="/">
             <Logo />
           </Link>
           <DesktopNavigation />
